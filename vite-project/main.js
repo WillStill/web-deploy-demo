@@ -34,21 +34,16 @@ const d8Mesh = new THREE.Mesh(d8, d8Material);
 
 // Vertices and Faces from https://threejs.org/docs/#api/en/geometries/PolyhedronGeometry
 
+const sides=10
 const vertices = [
     [0, 0, 1],
     [0, 0, -1],
-    [0, 0, -1],
-    [0, 0, -1],
-    [0, 0, -1],
-    [0, 0, -1],
-    [0, 0, -1],
-    [0, 0, -1],
-    [0, 0, -1],
-    [0, 0, -1],
-    [0, 0, -1],
-    [0, 0, -1],
-    [0, 0, -1]
 ].flat();
+
+for (let i = 0; i < sides; ++i) {
+    const b = (i * Math.PI * 2) / sides;
+    vertices.push(-Math.cos(b), -Math.sin(b), 0.105 * (i % 2 ? 1 : -1));
+}
 
 // const vertices = [
 //     0.5257311, 0.381966, 0.8506508,
@@ -85,8 +80,8 @@ const faces = [
     [1, 9, 8],
     [1, 10, 9],
     [1, 11, 10],
-    [1, 2, 11]
-].flat()
+    [1, 2, 11],
+].flat();
 
 const d10 = new THREE.PolyhedronGeometry( vertices, faces, 7 );
 const d10Material = new THREE.MeshStandardMaterial({ color: 0xe9c46a });
