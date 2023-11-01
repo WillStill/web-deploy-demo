@@ -100,6 +100,20 @@ const d20 = new THREE.IcosahedronGeometry(7);
 const d20Material = new THREE.MeshStandardMaterial({map: testTexture, color: 0xe76f51 });
 const d20Mesh = new THREE.Mesh(d20, d20Material);
 
+// Uncanny Cube
+const uncannyTexture = new THREE.TextureLoader().load('images/catsquare.png')
+
+const uncannyCube = new THREE.BoxGeometry(7, 7, 7)
+const uncannyMaterial = new THREE.MeshStandardMaterial({map: uncannyTexture, transparent: true});
+const uncannyMesh = new THREE.Mesh(uncannyCube, uncannyMaterial);
+
+// Canny Cube
+const cannyTexture = new THREE.TextureLoader().load('images/cannycatsquare.png')
+
+const cannyCube = new THREE.BoxGeometry(7, 7, 7)
+const cannyMaterial = new THREE.MeshStandardMaterial({map: cannyTexture, transparent: true});
+const cannyMesh = new THREE.Mesh(cannyCube, cannyMaterial);
+
 // Lighting
 
 const pointLight = new THREE.PointLight(0xffffff);
@@ -127,8 +141,8 @@ scene.add(d8Mesh);
 scene.add(d10Mesh)
 scene.add(d12Mesh);
 scene.add(d20Mesh);
-
-
+scene.add(uncannyMesh)
+scene.add(cannyMesh)
 
 // scene.add( cube );
 // scene.add(icoMesh);
@@ -164,15 +178,13 @@ d12Mesh.position.x = 27;
 d20Mesh.position.z = 0;
 d20Mesh.position.x = 47;
 
-// cube.position.z = -15;
-// cube.position.x = -15;
-//
-// cube.rotation.x = 2;
-// cube.rotation.y = .5;
-//
-// icoMesh.position.z= -15;
-// icoMesh.position.x= 15;
+uncannyMesh.position.x = 7
+uncannyMesh.position.y = -10
+uncannyMesh.position.z = 25
 
+cannyMesh.position.x = -13
+cannyMesh.position.y = -10
+cannyMesh.position.z = 25
 
 // Lights
 pointLight.position.set(0, -10, 10);
@@ -199,12 +211,9 @@ function animate() {
     d20Mesh.rotation.x += 0.05;
     d20Mesh.rotation.y += 0.03;
 
-    // // slowly rotate the cube:
-    // cube.rotation.x += 0.01;
-    // cube.rotation.y += 0.01;
-    // // rotate the icosahedron a little faster in the opposite direction:
-    // icoMesh.rotation.z += -0.03
-    // icoMesh.rotation.y += -0.03
+    uncannyMesh.rotation.y += 0.01
+
+    cannyMesh.rotation.y += -0.01
 
     renderer.render( scene, camera );
 }
