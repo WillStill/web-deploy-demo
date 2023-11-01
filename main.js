@@ -9,7 +9,6 @@ import './style.css'
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
 // ADDED SHAPES, We're making a full dice set
 
 const testTexture = new THREE.TextureLoader().load('images/d6.jpg')
