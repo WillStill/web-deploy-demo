@@ -46,8 +46,7 @@ const d8 = new THREE.OctahedronGeometry(7);
 const d8Material = new THREE.MeshStandardMaterial({map: testTexture, color: 0x8ab17d });
 const d8Mesh = new THREE.Mesh(d8, d8Material);
 
-// Dodecahedron WERE MAKING OUR OWN???? https://aqandrew.com/blog/10-sided-die-react/
-// Vertices and Faces from https://threejs.org/docs/#api/en/geometries/PolyhedronGeometry
+// pentagonal trapezohedron WERE MAKING OUR OWN???? https://aqandrew.com/blog/10-sided-die-react/
 
 const sides=10
 const vertices = [
@@ -86,6 +85,7 @@ const faces = [
 const d10 = new THREE.PolyhedronGeometry( vertices, faces, 7 );
 const d10Material = new THREE.MeshStandardMaterial({map: testTexture, color: 0xe9c46a });
 const d10Mesh = new THREE.Mesh(d10, d10Material);
+
 
 // Dodecahedron
 const d12 = new THREE.DodecahedronGeometry(7);
