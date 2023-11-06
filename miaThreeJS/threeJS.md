@@ -274,7 +274,9 @@ const d6Material = new THREE.MeshStandardMaterial({ color: 0x2a9d8f });
 const d6Mesh = new THREE.Mesh(d6, d6Material);
 ```
 
-But if you do need textures your going to need a better cube. To do this, we're going to make a cube that's bigger, Better, STRONGER.
+Depending on your needs you might want a full wrap around the cube or not. If you want a full wrap, we're going to make a cube that's bigger, Better, STRONGER.
+
+![standard material cube](images/screenshots/boxVsPoly.jpg)
 
 ## Making the BETTER Cube
 
@@ -317,6 +319,8 @@ scene.add(d6Mesh);
 The next shape we need to make is a pentagonal trapezohedron.
 
 ## Making a Pentagonal Trapezohedron
+
+![standard material cube](images/screenshots/d10.jpg)
 
 For this shape we follow along with parts of [this tutorial](https://aqandrew.com/blog/10-sided-die-react/) to create the face and verticies. The reason Three.JS doesn't have a geometry for a d10 is because there isn't a 3D shape where each face has 10 equal sides.
 
